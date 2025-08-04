@@ -1,0 +1,2 @@
+# WhisperChart
+AI Stock Charting

@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+tensorflow
+yfinance
+matplotlib
+plotly
+streamlit
+gradio
+transformers
+torch
+joblib
+requests

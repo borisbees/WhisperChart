@@ -1,0 +1,1 @@
+Darwin Boriss-MBP.attlocal.net 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:13:00 PDT 2024; root:xnu-10063.141.2~1/RELEASE_X86_64 x86_64

@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install deps",
+      "type": "shell",
+      "command": "make install",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run app (Streamlit)",
+      "type": "shell",
+      "command": "make run",
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Clean env",
+      "type": "shell",
+      "command": "make clean",
+      "problemMatcher": []
+    }
+  ]
+}
+

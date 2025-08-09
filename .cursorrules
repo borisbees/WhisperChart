@@ -1,0 +1,30 @@
+# Cursor Rules for WhisperChart
+
+Project context
+- WhisperChart is a Python/Streamlit app for interactive market forecasting and scenario exploration.
+- Source of truth files: README.md (setup), Makefile (commands), AGENTS.md (collaboration), app/app.py (UI entrypoint).
+
+Division of labor
+- Codex CLI agent ("Codex"): Handles multi-file or architectural changes, dependency management, environment/Makefile updates, data/API schema shifts, and any security-sensitive logic.
+- Cursor: Handles local refactors, docstrings and typing, small UI tweaks in `app/app.py`, logging, minor bug fixes, and inline tests/snippets.
+
+Workflow guardrails
+- Before large edits, propose a short plan and the minimal file list to change.
+- Prefer small, focused diffs; avoid broad renames or cross-cutting refactors without an approved plan.
+- Keep changes consistent with existing style; do not introduce new frameworks without discussion.
+- Use Makefile targets when running or describing commands: `make install`, `make run`, `make clean`.
+
+Quality & safety
+- Preserve app start (`streamlit run app/app.py`) and secrets loading under `app/.streamlit`.
+- Avoid hardcoding secrets; rely on `.streamlit/secrets.toml` or environment variables.
+- Keep functions small and cohesive; avoid global state leaks.
+- Add comments only when necessary to explain non-obvious logic.
+
+Preferred edits
+- For UI changes: suggest small, testable adjustments in `app/app.py` first.
+- For data/model code: add instrumentation/logging before refactors; keep numerical changes isolated.
+
+Hand-off protocol
+- If a change touches more than one directory or alters dependencies, defer to Codex and leave a note in AGENTS.md > Handoffs.
+- If an edit reveals missing context, prefer asking for confirmation rather than guessing.
+

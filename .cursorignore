@@ -1,0 +1,15 @@
+# Reduce noise in Cursor context
+venv/
+.git/
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
+data/
+models/
+*.pyc
+*.pyo
+*.pyd
+
+# Optional: ignore large notebooks if context is tight
+# notebooks/*.ipynb
+

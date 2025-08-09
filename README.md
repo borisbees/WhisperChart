@@ -6,9 +6,12 @@ WhisperChart helps you build intuition for market moves using deep learning, rea
 
 ## 🏗 Features
 - Multi-step price prediction with LSTM or Transformers
-- Live chart with uncertainty ribbon and sentiment overlay
-- Real-time news sentiment (FinBERT integration)
-- Interactive UI (Streamlit or Gradio)
+- Fast, interactive lightweight charts for real-time data visualization
+- Live market data from Alpaca API with customizable timeframes
+- Real-time quotes with bid/ask spreads and volume
+- Multi-timezone support with automatic market hours detection
+- Auto-refresh functionality for live trading scenarios
+- Interactive UI (Streamlit) with responsive design
 - Notebook demos for rapid prototyping
 
 ## 🚀 Getting Started
@@ -19,21 +22,35 @@ WhisperChart helps you build intuition for market moves using deep learning, rea
     cd whisperchart
     ```
 
-2. **Install dependencies:**
+2. **Create a virtual environment (recommended):**
     ```bash
+    python3.11 -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+3. **Install dependencies:**
+    ```bash
+    pip install --upgrade pip
     pip install -r requirements.txt
     ```
 
-3. **Run the app (Streamlit example):**
+4. **Set up Alpaca API credentials:**
     ```bash
     cd app
+    cp .streamlit/secrets.toml.example .streamlit/secrets.toml
+    # Edit .streamlit/secrets.toml with your Alpaca API keys
+    ```
+    Get free API keys from [Alpaca Markets](https://app.alpaca.markets/)
+
+5. **Run the app:**
+    ```bash
     streamlit run app.py
     ```
 
-4. **Try the notebooks:**
+6. **Try the notebooks:**
     - Open `notebooks/whisperchart_dev.ipynb` in Colab, JupyterLab, or VSCode.
 
-5. **Deploy to Hugging Face Spaces or Streamlit Cloud:**
+7. **Deploy to Hugging Face Spaces or Streamlit Cloud:**
     - Connect your GitHub repo for instant web demos.
 
 ## 🗂️ Structure

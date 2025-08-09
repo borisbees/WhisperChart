@@ -6,7 +6,7 @@
 #   make jupyter  # open Jupyter notebook (if installed)
 #   make clean    # remove the venv and __pycache__
 
-.PHONY: venv install run jupyter clean
+.PHONY: venv install run jupyter clean lint format dev-install precommit
 
 venv:
 	@echo "🔧 Creating Python virtual environment..."
@@ -35,3 +35,23 @@ help:
 	@echo "  run      - Run Streamlit app"
 	@echo "  jupyter  - Open Jupyter notebook"
 	@echo "  clean    - Remove venv and cache"
+	@echo "  lint     - Run Ruff and Black checks"
+	@echo "  format   - Autoformat with Black and Ruff"
+	@echo "  dev-install - Install dev tools (ruff/black/pre-commit)"
+	@echo "  precommit  - Install pre-commit git hooks"
+
+lint:
+	@echo "🔎 Linting with Ruff and Black..."
+	. venv/bin/activate && ruff check $(shell git ls-files "*.py") && black --check $(shell git ls-files "*.py")
+
+format:
+	@echo "🧼 Formatting with Black and Ruff..."
+	. venv/bin/activate && black $(shell git ls-files "*.py") && ruff check --fix $(shell git ls-files "*.py")
+
+dev-install:
+	@echo "🛠 Installing dev tools (ruff, black, pre-commit)..."
+	. venv/bin/activate && pip install -r requirements-dev.txt || pip install ruff black pre-commit
+
+precommit:
+	@echo "🔗 Installing pre-commit hooks..."
+	. venv/bin/activate && pre-commit install

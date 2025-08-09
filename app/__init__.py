@@ -1,0 +1,2 @@
+"""WhisperChart app package."""
+

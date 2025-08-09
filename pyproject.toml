@@ -1,0 +1,30 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+extend-exclude = '''
+(\n  ^venv/\n| ^\\.venv/\n| ^\\.git/\n| ^\\.vscode/\n| ^data/\n| ^models/\n| __pycache__\n| /\\\._.*\n)
+'''
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [
+    "venv",
+    ".venv",
+    ".git",
+    ".vscode",
+    "data",
+    "models",
+    "__pycache__",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
